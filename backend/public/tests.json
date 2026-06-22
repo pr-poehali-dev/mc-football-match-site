@@ -16,7 +16,14 @@
       "name": "Register without nick fails",
       "method": "POST",
       "path": "/",
-      "body": {"contact": "test@mail.com"},
+      "body": {"action": "join_team", "contact": "test@mail.com", "team_id": 1},
+      "expectedStatus": 400
+    },
+    {
+      "name": "Join team without team_id fails",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "join_team", "nick": "TestPlayer", "contact": "test@mail.com"},
       "expectedStatus": 400
     }
   ]

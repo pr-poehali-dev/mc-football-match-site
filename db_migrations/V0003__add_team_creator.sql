@@ -1,0 +1,1 @@
+ALTER TABLE teams ADD COLUMN IF NOT EXISTS created_by_nick VARCHAR(100);

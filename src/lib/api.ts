@@ -8,7 +8,9 @@ export interface Team {
   name: string;
   color: string;
   captain: string | null;
-  players_count: number;
+  created_by_nick: string | null;
+  approved_count: number;
+  total_count: number;
 }
 
 export interface Player {
