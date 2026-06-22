@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS teams (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    color VARCHAR(20) NOT NULL DEFAULT 'red',
+    captain VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS players (
+    id SERIAL PRIMARY KEY,
+    nick VARCHAR(100) NOT NULL,
+    real_name VARCHAR(150),
+    contact VARCHAR(200) NOT NULL,
+    role VARCHAR(50) DEFAULT 'Игрок',
+    skin_url TEXT,
+    team_id INTEGER REFERENCES teams(id),
+    team_name VARCHAR(100),
+    status VARCHAR(20) NOT NULL DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS posts (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    body TEXT NOT NULL,
+    image_url TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

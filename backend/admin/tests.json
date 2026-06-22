@@ -1,0 +1,18 @@
+{
+  "tests": [
+    {
+      "name": "No password rejected",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401
+    },
+    {
+      "name": "Wrong password rejected",
+      "method": "POST",
+      "path": "/",
+      "headers": {"X-Admin-Password": "wrong-pass-123"},
+      "body": {"action": "login"},
+      "expectedStatus": 401
+    }
+  ]
+}

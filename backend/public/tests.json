@@ -1,0 +1,23 @@
+{
+  "tests": [
+    {
+      "name": "Get all data",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Get teams only",
+      "method": "GET",
+      "path": "/?resource=teams",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Register without nick fails",
+      "method": "POST",
+      "path": "/",
+      "body": {"contact": "test@mail.com"},
+      "expectedStatus": 400
+    }
+  ]
+}
